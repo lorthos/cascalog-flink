@@ -1,6 +1,22 @@
-(ns cascalog-flink.core)
+(ns cascalog-flink.core
+  (:use [cascalog.api])
+  (:gen-class))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+
+(def words (cascalog.cascading.tap/memory-source-tap [
+                                                      ["t1" "t2"] ["t1" "t2"] ["t1" "t2"]
+                                                      ]))
+
+
+
+(comment
+  (?<- (stdout)
+       [?word ?sum]
+       (words)
+       )
+
+
+  (?- (stdout)
+      words)
+  )
+
