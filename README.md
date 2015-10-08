@@ -4,18 +4,14 @@ A Clojure library designed to ... well, that part is up to you.
 
 ## Usage
 
-To build the sample app from the command line use:
+Build and install
 
-    lein uberjar
+        https://github.com/codemomentum/cascalog
 
-Before running this sample app, be sure to set your `HADOOP_HOME` environment variable. Then clear the `output` directory, then to run on a desktop/laptop with Apache Hadoop in standalone mode:
 
-    rm -rf output
-    hadoop jar ./target/cflink.jar data/rain.txt output/rain
+which contains cascalog for flink
 
-To view the results:
 
-    more output/rain/part-00000
 ## License
 
 Copyright © 2015 FIXME
