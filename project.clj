@@ -4,7 +4,7 @@
   :license {:name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.7.0"]
-                 [cascalog/cascalog-core-flink "3.0.0-SNAPSHOT"]
+                 [cascalog/cascalog-core "3.0.0-flink-SNAPSHOT"]
                  ;[cascalog/cascalog-more-taps "2.1.1" :exclusions [cascalog/cascalog-core]]
                  ]
   :uberjar-name "cflink.jar"
