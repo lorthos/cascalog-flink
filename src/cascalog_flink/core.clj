@@ -1,6 +1,6 @@
-(ns cascalog-flink.core
-  (:use [cascalog.api])
-  (:gen-class))
+(ns cascalog-flink.core)
+
+(use 'cascalog.api)
 
 
 (def words (cascalog.cascading.tap/memory-source-tap [
@@ -13,8 +13,10 @@
 (comment
 
   (import 'org.apache.hadoop.io.serializer.JavaSerialization)
-  (with-serializations [JavaSerialization]
-                       (?<- (stdout) [?key] (data ?key ?value) (= ?value 3)))
+  (with-serializations ["com.twitter.chill.hadoop.KryoSerialization"]
+                       (?<- (stdout) [?key] (data ?key ?value) (= ?value 3))
+                       )
+  (?<- (stdout) [?key] (data ?key ?value) (= ?value 3))
   )
 
 
@@ -27,5 +29,11 @@
 
   (?- (stdout)
       words)
+
+  (try (?- (stdout)
+           data)
+       (catch Throwable t
+         (.printStackTrace t)))
+
   )
 
