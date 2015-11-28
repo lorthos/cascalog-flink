@@ -4,9 +4,10 @@ A Clojure library designed to ... well, that part is up to you.
 
 ## Usage
 
-Build and install
+First Build and install
 
-        https://github.com/codemomentum/cascalog
+        https://github.com/codemomentum/cascading-flink.git  (version 0.1-cascalog)
+        https://github.com/codemomentum/cascalog.git  (version cascalog-core-3.0.0-flink)
 
 
 which contains cascalog for flink
